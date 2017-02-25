@@ -35,7 +35,7 @@ function Symbol(x, y, speed, first, opacity) {
   this.first = first;
   this.opacity = opacity;
 
-  this.switchInterval = round(random(2, 500));
+  this.switchInterval = round(random(2, 25));
 
   this.setToRandomSymbol = function() {
     var charType = round(random(0, 9999));
@@ -62,7 +62,7 @@ function Symbol(x, y, speed, first, opacity) {
 function Stream() {
   this.symbols = [];
   this.totalSymbols = round(random(5, 350));
-  this.speed = random(5, 0);
+  this.speed = random(5, 10);
 
   this.generateSymbols = function(x, y) {
     var opacity = 255;
