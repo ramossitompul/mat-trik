@@ -35,7 +35,7 @@ function Symbol(x, y, speed, first, opacity) {
   this.first = first;
   this.opacity = opacity;
 
-  this.switchInterval = round(random(2, 50));
+  this.switchInterval = round(random(2, 500));
 
   this.setToRandomSymbol = function() {
     var charType = round(random(0, 9999));
@@ -43,7 +43,7 @@ function Symbol(x, y, speed, first, opacity) {
       if (charType > 1) {
         // set it to Katakana
         this.value = String.fromCharCode(
-          0x02600 + round(random(0, 5756))
+          0x02600 + round(random(0, 2956))
         );
       } else {
         // set it to numeric
