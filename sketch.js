@@ -1,5 +1,5 @@
 var streams = [];
-var fadeInterval = 0.9;
+var fadeInterval = 1.9;
 var symbolSize = 24;
 
 function setup() {
