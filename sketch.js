@@ -17,7 +17,7 @@ function setup() {
         window.innerWidth,
         window.innerHeight
     );
-    gg = createGraphics(400,100,120,60);
+    gg = createGraphics(400,100,120,160);
     pg = createVideo([]);
     pg.loop();
     pg.hide();
