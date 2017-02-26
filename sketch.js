@@ -1,4 +1,4 @@
-var song;
+var song, reverb;
 var pg;
 var gg;
 var img;
@@ -25,6 +25,15 @@ function setup() {
     pg.loop();
     pg.hide();
     song=loadSound("aos.mp3",loaded);
+    reverb = new p5.Reverb();
+    // sonnects soundFile to reverb with a
+    // reverbTime of 6 seconds, decayRate of 0.2%
+    reverb.process(song, 2, 0.012);
+    reverb.amp(2); // turn it up!
+    
+    
+    
+    
     var x = 0;
     var y = floor(random(-2000,0));
     for (var i = 0; i <= width / symbolSize; i++){
@@ -40,7 +49,7 @@ function setup() {
 
 
 function loaded(){
-  song.setVolume(0.5);
+  song.setVolume(0.92);
     song.play();
   }
 
