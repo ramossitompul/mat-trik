@@ -80,7 +80,7 @@ function Stream(){
     this.speed = random(5,20);
     
     this.generateSymbols = function (x,y){
-        var first = true;
+        var first = floor(random(0,50))==1;
         for(var i = 0; i<= this.totalSymbols; i++){
             symbol = new Symbol(x,y, this.speed, first);
             symbol.setToRandomSymbol();
