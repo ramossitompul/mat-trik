@@ -1,11 +1,14 @@
+var song;
 var pg;
 var gg;
 var img;
 var symbolSize = 22;
 var streams = [];
+var button;
 
 function preload(){
-    img=loadImage("hp.jpg");
+    img=loadImage("kreator.png");
+    //song=loadSound("aos.mp3",loaded);
 }
 
 
@@ -17,10 +20,11 @@ function setup() {
         window.innerWidth,
         window.innerHeight
     );
-    gg = createGraphics(400,100,120,160);
+    gg = createGraphics(400,100,120,60);
     pg = createVideo([]);
     pg.loop();
     pg.hide();
+    song=loadSound("aos.mp3",loaded);
     var x = 0;
     var y = floor(random(-2000,0));
     for (var i = 0; i <= width / symbolSize; i++){
@@ -34,6 +38,18 @@ function setup() {
 
 }
 
+
+function loaded(){
+  song.setVolume(0.5);
+    song.play();
+  }
+
+
+
+
+
+
+
 function draw() {
     background(20,30,40,190);
     gg.background(12,23,45,190);
@@ -44,7 +60,7 @@ function draw() {
     image(gg,400,400);
     image(gg,400,500);
     image(gg,500,400);
-    image(img,img.width,img.height);
+    image(img,img.width/2,img.height/2);
     streams.forEach(function(stream){
         stream.render();        
     });
@@ -92,7 +108,7 @@ function Stream(){
     this.render = function(){
         this.symbols.forEach(function(symbol){
             if(symbol.first){
-                fill(255,50,50,255);                 
+                fill(120,90,90,200);                 
             }else{
             fill(255,0,0,220);
             }
